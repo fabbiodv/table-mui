@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme)=>({
   }
 }));
 
-let USERS = [], STATUSES= ['Active', 'Pending', 'Blocked'];
+let USERS = [], STATUSES= ['Enrolado', 'Por vencer', 'Vencido'];
 for (let i = 0; i < 20; i++) {
     USERS[i] = {
         name: faker.name.findName(),
@@ -117,9 +117,9 @@ function MTable (){
               <Typography
                 className={classes.status}
                 style = {{backgroundColor:
-                ((row.status === 'Active' && 'gren') ||
-                (row.status === 'Pending' && 'blue') ||
-                (row.status === 'Blocked' && 'orange'))
+                ((row.status === 'Enrolado' && 'green') ||
+                (row.status === 'Por vencer' && 'orange') ||
+                (row.status === 'Vencido' && 'grey'))
                 }}
                 >
                 {row.status}
